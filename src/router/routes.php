@@ -4,13 +4,12 @@ require_once __DIR__ . '/../controllers/MainController.php';
 
 $router = new AltoRouter();
 
-// Calcul automatique de la base path (en incluant /public)
-$basePath = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
-$router->setBasePath($basePath);
-
-// Routes
+// Routes disponibles
 $router->map('GET', '/', 'MainController#home', 'home');
-$router->map('GET', '/about', 'MainController#about', 'about');
+$router->map('GET', '/catalogue', 'MainController#catalogue', 'catalogue');
+$router->map('GET', '/cart', 'MainController#cart', 'cart');
+$router->map('GET', '/connexion', 'MainController#connexion', 'connexion');
+$router->map('GET', '/register', 'MainController#register', 'register');
+$router->map('GET', '/product', 'MainController#product', 'product');
 
-// Retourne l'objet router
 return $router;

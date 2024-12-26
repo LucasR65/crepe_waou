@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
 <body>
-    <h1>Welcome to the Home Page!</h1>
-    <a href="./about">About Us</a>
+    <main>
+        <h2>Découvrez notre gamme de produit </h2>
+        <p>Explorez une vaste gamme de jouets pour tous les ages.</p>
+        <a href="/catalogue" class="btn">Voir le catalogue</a>
+    </main>
 </body>
-</html>

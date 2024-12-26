@@ -1,4 +1,7 @@
 <?php
+namespace App\Controllers;
+
+use App\Models\ProductModel;
 
 class MainController
 {
@@ -8,12 +11,33 @@ class MainController
         $this->render('home');
     }
 
-    // Page "About"
-    public function about()
+    //Page
+    public function catalogue()
     {
-        $this->render('about');
+        $products = (new ProductModel())->findAll();
+        $this->render('catalogue', ['products' => $products]);
     }
-
+    //Page Produit
+    public function product()
+    {
+        $this->render('product');
+    }
+    //Page Connection
+    public function connexion()
+    {
+        $this->render('connexion');
+    }
+    //Page Inscreiption
+    public function register()
+    {
+        $this->render('register');
+    }
+    //Page Panier
+    public function cart()
+    {
+        $products = (new ProductModel())->findAll(); // Fetch all products for the cart
+        $this->render('cart', ['products' => $products]);
+    }
     // Page 404
     public function notFound()
     {
@@ -21,7 +45,6 @@ class MainController
         echo "404 - Page Not Found!";
     }
 
-    // Méthode pour inclure une vue
     private function render($view, $data = [])
     {
         // Transmet les données aux vues
